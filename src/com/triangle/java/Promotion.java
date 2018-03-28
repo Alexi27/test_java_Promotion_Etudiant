@@ -1,26 +1,45 @@
 package com.triangle.java;
 
-import java.util.ArrayList;
+import java.util.*;
 
-public class Promotion extends triangleclass {
-	ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
+public class Promotion {
+	static Scanner sc = new Scanner(System.in);
+	
+	private String nom;
+	private String annee;
+	private static ArrayList<Etudiant> listEtudiants;
 
-	public void ajoutEtudiant(String nom, String prenom, int age){
-		System.out.println("Création d'un etudiant !");
-		Etudiant etu = new Etudiant(nom, prenom, age);
-//etudiants.get(0);
+	public Promotion() {
+		listEtudiants = new ArrayList<Etudiant>();
 	}
+
 	public void ajoutEtudiantDansPromotion(Etudiant etu) {
-		etudiants.add(etu);
+		listEtudiants.add(etu);
 	}
 	
 	public Etudiant findEtudiant(Etudiant etudiantToFind) {
-		for (Etudiant etudiant : etudiants) {
+		for (Etudiant etudiant : listEtudiants) {
 			if(etudiant.equals(etudiantToFind)) {
 				return etudiant;
 			}
 		}
 		return null;
 	}
-}
 
+	public Etudiant getEtudiant(int index){
+		return listEtudiants.get(index);
+	}
+
+	public int getTailleListe() {
+		return listEtudiants.size();
+	}
+
+	public static void suppEtudiant(Etudiant etu) {
+		if(etu  != null) {
+			listEtudiants.remove(etu);
+				System.out.println("Etudiant bien supprimé");
+			}else {
+				System.out.println("Etudiant pas trouvé");
+			}
+	}
+}
