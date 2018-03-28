@@ -22,6 +22,7 @@ public class Promotion {
 			if(etudiant.equals(etudiantToFind)) {
 				return etudiant;
 			}
+			
 		}
 		return null;
 	}

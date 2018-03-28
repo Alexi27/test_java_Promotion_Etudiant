@@ -39,6 +39,7 @@ public class triangleclass {
 				//etu.afficherNote(etu);
 				break;
 			}
+			
 		}while(modeEtudiant != 4);
 	}
 }

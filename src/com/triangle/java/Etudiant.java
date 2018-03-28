@@ -80,6 +80,7 @@ public class Etudiant {
 			}
 			return (Note/this.note.size());
 		}
+		
 
 		public void setNote(ArrayList<Float> listNotes) {
 				note = listNotes;
